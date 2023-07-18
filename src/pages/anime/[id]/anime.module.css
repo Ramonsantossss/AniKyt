@@ -1,21 +1,20 @@
-..main {
+.main {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #222222;
+  background-color: #333333;
   color: #ffffff;
 }
 
 .sidebar {
   width: 100%;
-  background-color: #333333;
+  background-color: #666666;
   padding: 2rem;
 }
 
 .categoryName {
   font-size: 1.25rem;
   margin-bottom: 2rem;
-  color: #f2c14e;
 }
 
 .categoryIcon {
@@ -31,14 +30,13 @@
 
 .episodeHeader {
   width: 100%;
-  background-color: #3e3e3e;
+  background-color: #1a1a1a;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   padding: 2rem;
 }
 
 .episodeTitle {
   font-size: 1.25rem;
-  color: #f2c14e;
 }
 
 .episodeList {
@@ -46,7 +44,7 @@
 }
 
 .episodeItem {
-  background-color: #5b5b5b;
+  background-color: rgba(102, 102, 102, 0.2);
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   padding: 1rem;
@@ -55,7 +53,6 @@
 .episodeButton {
   width: 100%;
   text-align: left;
-  color: #ffffff;
 }
 
 .videoSection {
@@ -65,7 +62,7 @@
   width: 100vw;
   height: 100vh;
   padding: 6rem;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(26, 26, 26, 0.9);
   display: flex;
   align-items: center;
 }
@@ -76,14 +73,14 @@
   left: 1rem;
   padding: 1rem;
   border-radius: 0.125rem;
-  color: #ffffff;
+  color: #cccccc;
   transition-property: color, background-color;
   transition-duration: 0.3s;
 }
 
 .closeButton:hover {
-  color: #f2c14e;
-  background-color: #3e3e3e;
+  color: #f2f2f2;
+  background-color: #666666;
 }
 
 .video {
