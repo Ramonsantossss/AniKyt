@@ -1,13 +1,13 @@
 .main {
   display: flex;
   min-height: 100vh;
-  background-color: #333333;
-  color: #ffffff;
+  background-color: #000000; /* Cor de fundo preta */
+  color: #ffffff; /* Cor do texto branca */
 }
 
 .sidebar {
   width: 25%;
-  background-color: #666666;
+  background-color: #333333; /* Cor de fundo preta mais escura */
   padding: 2rem;
 }
 
@@ -31,7 +31,7 @@
 
 .episodeHeader {
   width: 100%;
-  background-color: #1a1a1a;
+  background-color: #1a1a1a; /* Cor de fundo preta mais clara */
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   padding: 2rem;
 }
@@ -74,15 +74,15 @@
   left: 1rem;
   padding: 1rem;
   border-radius: 0.125rem;
-  color: #ffd700;
-  background-color: #8b6914;
+  color: #ffd700; /* Cor dourada */
+  background-color: #000000; /* Cor de fundo preta */
   transition-property: color, background-color;
   transition-duration: 0.3s;
 }
 
 .closeButton:hover {
-  color: #f2c200;
-  background-color: #4f3b08;
+  color: #f2c200; /* Cor dourada mais clara */
+  background-color: #1a1a1a; /* Cor de fundo preta mais clara */
 }
 
 .video {
