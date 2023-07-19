@@ -1,13 +1,21 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Header from "./Header";
+import headerStyle from './index.module.css';
+
 
 export default function Home({ animes }) {
   const router = useRouter();
 
   return (
     <main className="flex min-h-screen w-full flex-col items-center justify-between p-24 bg-zinc-800 text-zinc-200">
-      <Header />
+    <div className={`${headerStyle.header}`} id="header">
+      <div className={`${headerStyle.logo_header}`}>
+        <h3 style={{ color: 'white' }}><i>AniKit</i></h3>
+      </div>
+      <div className={`${headerStyle.navigation_header}`} id="navigation_header">
+      </div>
+    </div>
       <h1 className="text-xl text-bold uppercase mb-4">Search</h1>
       <form
         className="w-full my-8"
