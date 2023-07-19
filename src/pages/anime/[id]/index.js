@@ -11,15 +11,17 @@ export default function Anime({ animeInfo, episodes }) {
           <h1 className={styles.categoryName}>
             {animeInfo?.[0]?.category_name}
           </h1>
+          <center>
           <img
             className={styles.categoryIcon}
             src={`https://cdn.appanimeplus.tk/img/${animeInfo?.[0]?.category_icon}`}
           />
+          </center>
         </aside>
 
         <section className={styles.episodeSection}>
           <header className={styles.episodeHeader}>
-            <h1 className={styles.episodeTitle}>Episodes</h1>
+            <h1 className={styles.episodeTitle}>Episodios</h1>
           </header>
           <ul className={styles.episodeList}>
             {episodes?.map((ep) => (
@@ -42,7 +44,7 @@ export default function Anime({ animeInfo, episodes }) {
                 className={styles.closeButton}
                 onClick={() => setShowVideo()}
               >
-                ✘
+                Voltar 
               </button>
               <video className={styles.video} src={showVideo?.url} controls />
             </section>
