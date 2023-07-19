@@ -3,8 +3,8 @@
   display: flex;
   flex-direction: column;
   padding: 8px 24px 24px; /* Decreased top padding to 8px */
-  background-color: #f7f7f7; /* Cor de fundo refinada */
-  color: #333333; /* Cor de texto escura */
+  background-color: #000000; /* Cor de fundo preta */
+  color: #ffffff; /* Cor do texto branca */
 }
 
 .title {
@@ -12,6 +12,7 @@
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 16px;
+  color: #ffd700; /* Cor do título dourado escuro */
 }
 
 .form {
@@ -24,14 +25,14 @@
   padding: 8px;
   border-radius: 4px;
   outline: none;
-  border: 2px solid #dcdcdc; /* Cor da borda refinada */
-  background-color: #f2f2f2; /* Cor de fundo do campo de entrada */
-  color: #333333;
+  border: 2px solid #ffd700; /* Cor da borda dourada escuro */
+  background-color: #1f1f1f; /* Cor de fundo do campo de entrada */
+  color: #ffffff;
   transition: border-color 0.3s;
 }
 
 .input:focus {
-  border-color: #b35ef4; /* Cor da borda ao focar */
+  border-color: #8b7500; /* Cor da borda ao focar (dourado mais escuro) */
 }
 
 .list {
@@ -42,14 +43,14 @@
 }
 
 .link {
-  background-color: #f2f2f2; /* Cor de fundo refinada */
+  background-color: #1f1f1f; /* Cor de fundo refinada */
   border-radius: 4px;
   transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .link:hover {
-  background-color: #e5e5e5; /* Cor de fundo ao passar o mouse */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: #333333; /* Cor de fundo ao passar o mouse (dourado mais escuro) */
+  box-shadow: 0 2px 4px rgba(255, 215, 0, 0.5); /* Sombra dourada escura */
 }
 
 .image {
@@ -60,6 +61,6 @@
 
 .text {
   padding: 8px;
-  color: #333333;
+  color: #ffffff;
   font-size: 16px;
 }
