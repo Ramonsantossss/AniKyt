@@ -6,8 +6,12 @@
 }
 
 .sidebar {
+  background-image: url('https://telegra.ph/file/27cfa0613140fc15fcf7f.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   width: 25%;
-  background-color: #333333; /* Cor de fundo preta mais escura */
+  /*background-color: #333333;*/ /* Cor de fundo preta mais escura */
   padding: 2rem;
 }
 
