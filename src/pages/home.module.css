@@ -1,12 +1,16 @@
 .main {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: row; /* Alterando de 'column' para 'row' */
+  overflow-x: auto; /* Adicionando overflow-x para permitir a rolagem horizontal */
   padding: 24px;
-  background-color: gray;
-  color: #fff;
+  background-color: #b35ef4;
+  color: black;
+}
+
+.item {
+  flex: 0 0 auto; /* Impede que os itens sejam redimensionados */
+  margin-right: 16px; /* Adiciona um espaçamento entre os itens */
 }
 
 .title {
@@ -26,9 +30,9 @@
   padding: 8px;
   border-radius: 4px;
   outline: none;
-  border: 2px solid #fff;
-  background-color: transparent;
-  color: #fff;
+  border: 2px solid #8442f2;
+  background-color: #e528f0;
+  color: black;
   transition: border-color 0.3s;
 }
 
@@ -62,6 +66,6 @@
 
 .text {
   padding: 8px;
-  color: #fff;
+  color: black;
   font-size: 16px;
 }
