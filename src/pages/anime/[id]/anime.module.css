@@ -17,8 +17,9 @@
 }
 
 .categoryIcon {
-  width: 30vw;
+  width: 20%;
   object-fit: contain;
+  float: left;
 }
 
 .episodeSection {
