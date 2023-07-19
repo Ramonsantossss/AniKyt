@@ -1,17 +1,16 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
-//import Header from "./Header";
-//import headerStyle from './index.module.css';
-
+import React from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import styles from './home.module.css';
 
 export default function Home({ animes }) {
   const router = useRouter();
 
   return (
-    <main className="flex min-h-screen w-full flex-col items-center justify-between p-24 bg-zinc-800 text-zinc-200">
-      <h1 className="text-xl text-bold uppercase mb-4">Procurar</h1>
+    <main className={`${styles.main}`}>
+      <h1 className={`${styles.title}`}>Procurar</h1>
       <form
-        className="w-full my-8"
+        className={`${styles.form}`}
         onSubmit={(event) => {
           event.preventDefault();
           event.stopPropagation();
@@ -23,27 +22,27 @@ export default function Home({ animes }) {
         }}
       >
         <input
-          className="w-full rounded-md py-2 px-4 outline-none border-2 border-white focus:border-red-300 text-zinc-900"
+          className={`${styles.input}`}
           type="search"
           placeholder="Pesquisar anime..."
         />
       </form>
-      <h1 className="text-xl text-bold uppercase mb-4">Populares</h1>
+      <h1 className={`${styles.title}`}>Populares</h1>
 
-      <ul className="flex flex-wrap gap-4 items-center">
+      <ul className={`${styles.list}`}>
         {animes?.map((item) => (
           <Link
-            className="bg-zinc-200/20 rounded-sm transition-all hover:bg-zinc-600 hover:shadow-md"
+            className={`${styles.link}`}
             key={item?.id}
             href={`/anime/${item?.id}`}
           >
             <li className="flex flex-col justify-between w-[200px]">
               <img
-                className="object-contain w-full"
+                className={`${styles.image}`}
                 src={`https://cdn.appanimeplus.tk/img/${item?.category_icon}`}
                 alt="Anime Banner"
               />
-              <p className="p-4 text-zinc-200 text-md">{item?.category_name}</p>
+              <p className={`${styles.text}`}>{item?.category_name}</p>
             </li>
           </Link>
         ))}
@@ -53,7 +52,7 @@ export default function Home({ animes }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch("https://animeland.appanimeplus.tk/videoweb/api.php?action=trendingcategory");
+  const res = await fetch('https://animeland.appanimeplus.tk/videoweb/api.php?action=trendingcategory');
   const animes = await res.json();
 
   return { props: { animes } };
