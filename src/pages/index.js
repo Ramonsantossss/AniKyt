@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import Header from "./Header";
+//import Header from "./Header";
 //import headerStyle from './index.module.css';
 
 
@@ -9,7 +9,7 @@ export default function Home({ animes }) {
 
   return (
     <main className="flex min-h-screen w-full flex-col items-center justify-between p-24 bg-zinc-800 text-zinc-200">
-      <h1 className="text-xl text-bold uppercase mb-4">Search</h1>
+      <h1 className="text-xl text-bold uppercase mb-4">Procurar</h1>
       <form
         className="w-full my-8"
         onSubmit={(event) => {
@@ -25,10 +25,10 @@ export default function Home({ animes }) {
         <input
           className="w-full rounded-md py-2 px-4 outline-none border-2 border-white focus:border-red-300 text-zinc-900"
           type="search"
-          placeholder="Search anime..."
+          placeholder="Pesquisar anime..."
         />
       </form>
-      <h1 className="text-xl text-bold uppercase mb-4">Trending</h1>
+      <h1 className="text-xl text-bold uppercase mb-4">Populares</h1>
 
       <ul className="flex flex-wrap gap-4 items-center">
         {animes?.map((item) => (
