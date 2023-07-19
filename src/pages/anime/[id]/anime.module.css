@@ -74,14 +74,15 @@
   left: 1rem;
   padding: 1rem;
   border-radius: 0.125rem;
-  color: #cccccc;
+  color: #ffd700;
+  background-color: #8b6914;
   transition-property: color, background-color;
   transition-duration: 0.3s;
 }
 
 .closeButton:hover {
-  color: #f2f2f2;
-  background-color: #666666;
+  color: #f2c200;
+  background-color: #4f3b08;
 }
 
 .video {
