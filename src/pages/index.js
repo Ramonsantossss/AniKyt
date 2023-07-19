@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Header from "./Header";
 
 export default function Home({ animes }) {
   const router = useRouter();
 
   return (
     <main className="flex min-h-screen w-full flex-col items-center justify-between p-24 bg-zinc-800 text-zinc-200">
+      <Header />
       <h1 className="text-xl text-bold uppercase mb-4">Search</h1>
       <form
         className="w-full my-8"
@@ -50,9 +52,7 @@ export default function Home({ animes }) {
 }
 
 export async function getServerSideProps() {
-  const res =
-    await fetch(`https://animeland.appanimeplus.tk/videoweb/api.php?action=trendingcategory
-  `);
+  const res = await fetch("https://animeland.appanimeplus.tk/videoweb/api.php?action=trendingcategory");
   const animes = await res.json();
 
   return { props: { animes } };
