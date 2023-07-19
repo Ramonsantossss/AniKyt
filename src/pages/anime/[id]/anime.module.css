@@ -44,7 +44,6 @@
 .episodeTitle {
   font-size: 1.25rem;
   margin-bottom: 1rem;
-  color: #ffd700; /* Cor dourada */
 }
 
 .episodeList {
@@ -115,15 +114,16 @@
   }
 
   .categoryIcon {
-    width: 100%;
+    width: 30vw;
     max-width: 200px;
     margin-bottom: 0.5rem;
+    align-self: flex-start;
   }
 
   .episodeTitle {
     font-size: 1rem;
     margin-bottom: 0.5rem;
-    color: #ffd700; /* Cor dourada */
+    margin-left: 1rem;
   }
 
   .episodeList {
