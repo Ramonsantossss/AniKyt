@@ -37,11 +37,11 @@
 
 .list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 13px;
-  margin: 5px;
+  grid-template-columns: repeat(3, 1fr); /* Altere para 3 colunas */
+  gap: 16px;
   justify-content: center;
 }
+
 
 .link {
   background-color: #1f1f1f; /* Cor de fundo refinada */
