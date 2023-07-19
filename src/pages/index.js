@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styles from './home.module.css';
+import Carousel from './components/Carousel';
 
 export default function Home({ animes }) {
   const router = useRouter();
@@ -28,7 +29,7 @@ export default function Home({ animes }) {
         />
       </form>
       <h1 className={`${styles.title}`}>Populares</h1>
-
+      <Carousel>
       <ul className={`${styles.list}`}>
         {animes?.map((item) => (
           <Link
@@ -47,6 +48,7 @@ export default function Home({ animes }) {
           </Link>
         ))}
       </ul>
+      </Carousel>
     </main>
   );
 }
