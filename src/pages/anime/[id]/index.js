@@ -34,7 +34,7 @@ export default function Anime({ animeInfo, episodes }) {
                     setShowVideo({ url: ep?.sdlocation || ep?.location });
                   }}
                 >
-                  #{ep?.video_id} - {ep?.title}
+                  #{ep?.title}
                 </button>
               </li>
             ))}
