@@ -3,10 +3,9 @@
   display: flex;
   flex-direction: column;
   padding: 8px 24px 24px; /* Decreased top padding to 8px */
-  background-color: #b35ef4;
-  color: black;
+  background-color: #f7f7f7; /* Cor de fundo refinada */
+  color: #333333; /* Cor de texto escura */
 }
-
 
 .title {
   font-size: 24px;
@@ -25,14 +24,14 @@
   padding: 8px;
   border-radius: 4px;
   outline: none;
-  border: 2px solid #8442f2;
-  background-color: #e528f0;
-  color: black;
+  border: 2px solid #dcdcdc; /* Cor da borda refinada */
+  background-color: #f2f2f2; /* Cor de fundo do campo de entrada */
+  color: #333333;
   transition: border-color 0.3s;
 }
 
 .input:focus {
-  border-color: #f00;
+  border-color: #b35ef4; /* Cor da borda ao focar */
 }
 
 .list {
@@ -43,13 +42,13 @@
 }
 
 .link {
-  background-color: rgba(192, 192, 192, 0.2);
+  background-color: #f2f2f2; /* Cor de fundo refinada */
   border-radius: 4px;
   transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .link:hover {
-  background-color: rgba(192, 192, 192, 0.6);
+  background-color: #e5e5e5; /* Cor de fundo ao passar o mouse */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -61,6 +60,6 @@
 
 .text {
   padding: 8px;
-  color: black;
+  color: #333333;
   font-size: 16px;
 }
