@@ -9,7 +9,7 @@ export default function Anime({ animeInfo, episodes }) {
       <main className={styles.main}>
         <aside className={styles.sidebar}>
           <h1 className={styles.categoryName}>
-            {animeInfo?.[0]?.category_name}
+            Episodios
           </h1>
           <center>
           <img
@@ -21,7 +21,9 @@ export default function Anime({ animeInfo, episodes }) {
 
         <section className={styles.episodeSection}>
           <header className={styles.episodeHeader}>
-            <h1 className={styles.episodeTitle}>Episodios</h1>
+            <h1 className={styles.episodeTitle}>
+            {animeInfo?.[0]?.category_name}
+            </h1>
           </header>
           <ul className={styles.episodeList}>
             {episodes?.map((ep) => (

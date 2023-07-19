@@ -93,7 +93,6 @@
 .closeButton:hover {
   color: #f2c200; /* Cor dourada mais clara */
   background-color: #1a1a1a; /* Cor de fundo preta mais clara */
-  position: fixed;
 }
 
 .video {
@@ -142,7 +141,6 @@
   .closeButton {
     padding: 0.75rem;
     font-size: 0.875rem;
-    position: fixed;
   }
 
   .videoSection {
