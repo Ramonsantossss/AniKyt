@@ -27,7 +27,7 @@ export default function Anime({ animeInfo, episodes }) {
                 <button
                   className={styles.episodeButton}
                   onClick={() => {
-                    setShowVideo({ url: ep?.location || ep?.sdlocation });
+                    setShowVideo({ url: ep?.sdlocation || ep?.location });
                   }}
                 >
                   #{ep?.video_id} - {ep?.title}
