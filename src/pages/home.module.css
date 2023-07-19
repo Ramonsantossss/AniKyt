@@ -1,16 +1,10 @@
 .main {
   min-height: 100vh;
   display: flex;
-  flex-direction: row; /* Alterando de 'column' para 'row' */
-  overflow-x: auto; /* Adicionando overflow-x para permitir a rolagem horizontal */
+  flex-direction: column;
   padding: 24px;
   background-color: #b35ef4;
   color: black;
-}
-
-.item {
-  flex: 0 0 auto; /* Impede que os itens sejam redimensionados */
-  margin-right: 16px; /* Adiciona um espaçamento entre os itens */
 }
 
 .title {

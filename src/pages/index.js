@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styles from './home.module.css';
+//import Carousel from './components/Carousel';
 
 export default function Home({ animes }) {
   const router = useRouter();
@@ -31,20 +32,23 @@ export default function Home({ animes }) {
 
       <ul className={`${styles.list}`}>
         {animes?.map((item) => (
-          <li className={`${styles.item}`} key={item?.id}>
-            <Link href={`/anime/${item?.id}`}>
-              <a className={`${styles.link}`}>
-                <img
-                  className={`${styles.image}`}
-                  src={`https://cdn.appanimeplus.tk/img/${item?.category_icon}`}
-                  alt="Anime Banner"
-                />
-                <p className={`${styles.text}`}>{item?.category_name}</p>
-              </a>
-            </Link>
-          </li>
+          <Link
+            className={`${styles.link}`}
+            key={item?.id}
+            href={`/anime/${item?.id}`}
+          >
+            <li className="flex flex-col justify-between w-[200px]">
+              <img
+                className={`${styles.image}`}
+                src={`https://cdn.appanimeplus.tk/img/${item?.category_icon}`}
+                alt="Anime Banner"
+              />
+              <p className={`${styles.text}`}>{item?.category_name}</p>
+            </li>
+          </Link>
         ))}
       </ul>
+
     </main>
   );
 }
