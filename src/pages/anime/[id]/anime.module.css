@@ -1,13 +1,12 @@
 .main {
   display: flex;
-  flex-direction: column;
   min-height: 100vh;
   background-color: #333333;
   color: #ffffff;
 }
 
 .sidebar {
-  width: 100%;
+  width: 25%;
   background-color: #666666;
   padding: 2rem;
 }
@@ -18,12 +17,14 @@
 }
 
 .categoryIcon {
-  width: 100%;
+  width: 30vw;
   object-fit: contain;
 }
 
 .episodeSection {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
   padding: 2rem;
   overflow-y: auto;
 }
