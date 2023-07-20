@@ -4,9 +4,9 @@
   display: flex;
   flex-direction: column;
   padding: 8px 24px 24px; /* Decreased top padding to 8px */
-  background-image: linear-gradient(45deg, red, black, darkred);
+  background-image: linear-gradient(45deg, darkred, black, darkred);
   background-size: 200% 200%;
-  animation: gradientAnimation 4s linear infinite;
+  animation: gradientAnimation 6s linear infinite;
 }
 
 @keyframes gradientAnimation {
@@ -23,7 +23,7 @@
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 16px;
-  color: #ffd700; /* Cor do título dourado escuro */
+  color: white; /* Cor do título dourado escuro */
 }
 
 .form {
@@ -36,7 +36,7 @@
   padding: 8px;
   border-radius: 4px;
   outline: none;
-  border: 2px solid #ffd700; /* Cor da borda dourada escuro */
+  border: 2px solid gray; /* Cor da borda dourada escuro */
   background-color: #1f1f1f; /* Cor de fundo do campo de entrada */
   color: #ffffff;
   transition: border-color 0.3s;
