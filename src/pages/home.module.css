@@ -38,7 +38,7 @@
 
 .list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Altere para 3 colunas */
+  grid-template-columns: repeat(2, 2fr); /* Altere para 3 colunas */
   gap: 8px;
   justify-content: center;
 }
