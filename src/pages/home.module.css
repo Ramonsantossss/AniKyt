@@ -38,8 +38,8 @@
 
 .list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Altere para 3 colunas */
-  gap: 16px;
+  grid-template-columns: repeat(2, 1fr); /* Altere para 3 colunas */
+  gap: 8px;
   justify-content: center;
 }
 
@@ -61,7 +61,7 @@
 }
 
 .text {
-  padding: 4px;
+  padding: 8px;
   color: #ffffff;
   font-size: 16px;
 }
