@@ -1,18 +1,26 @@
-// EpisodePage.js
-import React from "react";
-import { useParams } from "react-router-dom";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 const EpisodePage = ({ episodes }) => {
-  const { episodeId } = useParams();
+  const router = useRouter();
+  const { episodeId } = router.query;
   const episode = episodes.find((ep) => ep.video_id === episodeId);
 
+  useEffect(() => {
+    if (!episode) {
+      // Episódio não encontrado, redirecionar para a página anterior
+      router.back();
+    }
+  }, [episode, router]);
+
   if (!episode) {
-    return <div>Episódio não encontrado.</div>;
+    // Renderize algo ou uma página de carregamento enquanto espera o redirecionamento
+    return <div>Carregando...</div>;
   }
 
   return (
     <div>
-      <button onClick={() => window.history.back()}>Voltar</button>
+      <button onClick={() => router.back()}>Voltar</button>
       <video src={episode.sdlocation || episode.location} controls />
     </div>
   );

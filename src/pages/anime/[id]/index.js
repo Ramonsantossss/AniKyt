@@ -1,14 +1,13 @@
-// Anime.js
 import { useState } from "react";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import styles from "./anime.module.css";
-import EpisodePage from "./EpisodePage";
+import { useRouter } from "next/router";
 
 export default function Anime({ animeInfo, episodes }) {
+  const router = useRouter();
   const [showVideo, setShowVideo] = useState({ url: "" });
 
   return (
-    <Router>
+    <>
       <main className={styles.main}>
         <aside className={styles.sidebar}>
           <h1 className={styles.categoryName}>Episodios</h1>
@@ -30,33 +29,32 @@ export default function Anime({ animeInfo, episodes }) {
           <ul className={styles.episodeList}>
             {episodes?.map((ep) => (
               <li key={ep?.video_id} className={styles.episodeItem}>
-                <Link to={`/episode/${ep?.video_id}`}>
+                <button
+                  className={styles.episodeButton}
+                  onClick={() => {
+                    setShowVideo({ url: ep?.sdlocation || ep?.location });
+                  }}
+                >
                   {ep?.title}
-                </Link>
+                </button>
               </li>
             ))}
           </ul>
-
-          {showVideo?.url && (
-            <section className={styles.videoSection}>
-              <button
-                className={styles.closeButton}
-                onClick={() => setShowVideo({ url: "" })}
-              >
-                Voltar
-              </button>
-              <video className={styles.video} src={showVideo?.url} controls />
-            </section>
-          )}
         </section>
-
-        <Switch>
-          <Route path="/episode/:episodeId">
-            <EpisodePage episodes={episodes} />
-          </Route>
-        </Switch>
       </main>
-    </Router>
+
+      {showVideo?.url && (
+        <section className={styles.videoSection}>
+          <button
+            className={styles.closeButton}
+            onClick={() => setShowVideo({ url: "" })}
+          >
+            Voltar
+          </button>
+          <video className={styles.video} src={showVideo?.url} controls />
+        </section>
+      )}
+    </>
   );
 }
 
