@@ -1,29 +1,28 @@
 import { useState } from "react";
 import styles from "./anime.module.css";
-import { useRouter } from "next/router";
 
 export default function Anime({ animeInfo, episodes }) {
-  const router = useRouter();
   const [showVideo, setShowVideo] = useState({ url: "" });
 
   return (
     <>
       <main className={styles.main}>
         <aside className={styles.sidebar}>
-          <h1 className={styles.categoryName}>Episodios</h1>
+          <h1 className={styles.categoryName}>
+            Episodios
+          </h1>
           <center>
-            <img
-              className={styles.categoryIcon}
-              src={`https://cdn.appanimeplus.tk/img/${animeInfo?.[0]?.category_icon}`}
-              alt="Category Icon"
-            />
+          <img
+            className={styles.categoryIcon}
+            src={`https://cdn.appanimeplus.tk/img/${animeInfo?.[0]?.category_icon}`}
+          />
           </center>
         </aside>
 
         <section className={styles.episodeSection}>
           <header className={styles.episodeHeader}>
             <h1 className={styles.episodeTitle}>
-              {animeInfo?.[0]?.category_name}
+            {animeInfo?.[0]?.category_name}
             </h1>
           </header>
           <ul className={styles.episodeList}>
@@ -40,20 +39,20 @@ export default function Anime({ animeInfo, episodes }) {
               </li>
             ))}
           </ul>
+
+          {showVideo?.url && (
+            <section className={styles.videoSection}>
+              <button
+                className={styles.closeButton}
+                onClick={() => setShowVideo()}
+              >
+                Voltar 
+              </button>
+              <video className={styles.video} src={showVideo?.url} controls />
+            </section>
+          )}
         </section>
       </main>
-
-      {showVideo?.url && (
-        <section className={styles.videoSection}>
-          <button
-            className={styles.closeButton}
-            onClick={() => setShowVideo({ url: "" })}
-          >
-            Voltar
-          </button>
-          <video className={styles.video} src={showVideo?.url} controls />
-        </section>
-      )}
     </>
   );
 }
