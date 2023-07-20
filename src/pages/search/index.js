@@ -1,15 +1,14 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import styles from "./search.module.css"; // Import the CSS module
 
 export default function Search({ animes }) {
   const router = useRouter();
 
   return (
-    <main className={styles.container}>
-      <h1 className={styles.title}>Search other</h1>
+    <main className="flex min-h-screen w-full flex-col items-center justify-between p-24 bg-zinc-800 text-zinc-200">
+      <h1 className="text-xl text-bold uppercase mb-4">Search other</h1>
       <form
-        className={styles.form}
+        className="w-full my-8"
         onSubmit={(event) => {
           event.preventDefault();
           event.stopPropagation();
@@ -21,28 +20,28 @@ export default function Search({ animes }) {
         }}
       >
         <input
-          className={styles.input}
+          className="w-full rounded-md py-2 px-4 outline-none border-2 border-white focus:border-red-300 text-zinc-900"
           type="search"
           placeholder="Search anime..."
         />
       </form>
 
-      <h1 className={styles.results-title}>Results</h1>
+      <h1 className="text-xl text-bold uppercase mb-4">Results</h1>
 
-      <ul className={styles.results-list}>
+      <ul className="flex flex-wrap gap-4 items-center">
         {animes?.map((item) => (
           <Link
-            className={styles.anime-item}
+            className="bg-zinc-200/20 rounded-sm transition-all hover:bg-zinc-600 hover:shadow-md"
             key={item?.category_id}
             href={`/anime/${item?.category_id}`}
           >
-            <li className={styles.anime-item}>
+            <li className="flex flex-col justify-between w-[200px]">
               <img
-                className={styles.img}
+                className="object-contain w-full"
                 src={`https://cdn.appanimeplus.tk/img/${item?.category_icon}`}
                 alt="Anime Banner"
               />
-              <p className={styles.text}>{item?.category_name}</p>
+              <p className="p-4 text-zinc-200 text-md">{item?.category_name}</p>
             </li>
           </Link>
         ))}
