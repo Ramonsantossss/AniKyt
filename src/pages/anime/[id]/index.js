@@ -1,41 +1,38 @@
+// Anime.js
 import { useState } from "react";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import styles from "./anime.module.css";
+import EpisodePage from "./EpisodePage";
 
 export default function Anime({ animeInfo, episodes }) {
   const [showVideo, setShowVideo] = useState({ url: "" });
 
   return (
-    <>
+    <Router>
       <main className={styles.main}>
         <aside className={styles.sidebar}>
-          <h1 className={styles.categoryName}>
-            Episodios
-          </h1>
+          <h1 className={styles.categoryName}>Episodios</h1>
           <center>
-          <img
-            className={styles.categoryIcon}
-            src={`https://cdn.appanimeplus.tk/img/${animeInfo?.[0]?.category_icon}`}
-          />
+            <img
+              className={styles.categoryIcon}
+              src={`https://cdn.appanimeplus.tk/img/${animeInfo?.[0]?.category_icon}`}
+              alt="Category Icon"
+            />
           </center>
         </aside>
 
         <section className={styles.episodeSection}>
           <header className={styles.episodeHeader}>
             <h1 className={styles.episodeTitle}>
-            {animeInfo?.[0]?.category_name}
+              {animeInfo?.[0]?.category_name}
             </h1>
           </header>
           <ul className={styles.episodeList}>
             {episodes?.map((ep) => (
               <li key={ep?.video_id} className={styles.episodeItem}>
-                <button
-                  className={styles.episodeButton}
-                  onClick={() => {
-                    setShowVideo({ url: ep?.sdlocation || ep?.location });
-                  }}
-                >
+                <Link to={`/episode/${ep?.video_id}`}>
                   {ep?.title}
-                </button>
+                </Link>
               </li>
             ))}
           </ul>
@@ -44,16 +41,22 @@ export default function Anime({ animeInfo, episodes }) {
             <section className={styles.videoSection}>
               <button
                 className={styles.closeButton}
-                onClick={() => setShowVideo()}
+                onClick={() => setShowVideo({ url: "" })}
               >
-                Voltar 
+                Voltar
               </button>
               <video className={styles.video} src={showVideo?.url} controls />
             </section>
           )}
         </section>
+
+        <Switch>
+          <Route path="/episode/:episodeId">
+            <EpisodePage episodes={episodes} />
+          </Route>
+        </Switch>
       </main>
-    </>
+    </Router>
   );
 }
 
